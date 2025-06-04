@@ -1,0 +1,233 @@
+/* Global Reset (already exists, removed) */
+
+/* Layout Structure */
+.main-content {
+    flex: 1;
+}
+/* Header Navigation Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #f4f3f4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #FFD700;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  
+
+
+}
+
+/* Back button inside header */
+.header .back-btn {
+  font-size: 15px;
+  color: #2803df;
+  text-decoration: none;
+  background-color: #e7e9ec;
+  padding: 8px 14px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  
+}
+
+.header .back-btn:hover {
+  background-color: #cac8c2;
+  transform: scale(1.05);
+}
+
+/* Optional: Title or Logo in header */
+.header .site-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a5cf1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .header .back-btn {
+    margin-bottom: 10px;
+  }
+}
+
+/* Section */
+.firstsection {
+    text-align: center;
+    padding: 100px 50px 50px 50px;
+}
+
+/* School image card */
+.school {
+    padding: 10px;
+    width: 250px;
+    height: 150px;
+    margin: 25px;
+    float: right;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Toggle Button */
+.toggle-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Cancel button in sidebar */
+.cancel-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+.cancel-btn:hover {
+    color: #FFD700;
+}
+
+/* Custom container */
+.div {
+    margin: 25px 25px 25px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer styles (already exists, removed footer styles) */
+
+/* News Article Cards (only new parts retained) */
+.news-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.news-article:hover {
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.news-article img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+.news-article img:hover {
+    transform: scale(1.05);
+}
+.news-article h3 {
+    font-size: 2em;
+    margin: 15px 0 10px;
+    color: #222;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.news-article p.date {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+}
+.news-article p.summary {
+    font-size: 1.1em;
+    color: #444;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.news-article .read-more {
+    font-size: 1.1em;
+    color: #4f8bf9;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+.news-article .read-more:hover {
+    color: #3a74d1;
+    border-color: #3a74d1;
+}
+
+/* Pagination Buttons */
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+.pagination button {
+    background: linear-gradient(to right, #4f8bf9, #3a74d1);
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .firstsection {
+        padding: 90px 20px 30px;
+    }
+
+    .school {
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+        float: none;
+    }
+
+    .cancel-btn {
+        font-size: 18px;
+    }
+}
+  .footer {
+            background-color: #f4f3f4;
+            color: rgb(20, 61, 241);
+            text-align: center;
+            padding: 5px;
+            width: 100%;
+        }
+        
+.footer a
+{
+ text-decoration: none;   
+}

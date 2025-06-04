@@ -1,0 +1,21 @@
+{
+  "name": "Emobces",
+  "short_name": "Emobces",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#317EFB",
+  "description": "Educational Grids",
+  "icons": [
+    {
+      "src": "image/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
