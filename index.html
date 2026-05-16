@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>EMBOCES Devchuli</title>
   <link rel="icon" href="image/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#ffffff" />
@@ -37,12 +41,16 @@
   </div>
 </div>
 
-<!-- Header -->
 <header>
-  <div >
+  <a href="index.html" class="brand">
+    <img src="image/logo.png" alt="EMBOCES Logo">
+    <span>EMBOCES</span>
+  </a>
+  <nav class="main-nav" aria-label="Main navigation">
     <ul>
+      <li><a href="index.html" class="active">Home</a></li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleSubmenu('gridSubmenu')">Grid▼</a>
+        <a href="javascript:void(0);" onclick="toggleSubmenu(event, 'gridSubmenu')">Grid▼</a>
         <ul id="gridSubmenu" class="submenu">
           <li><a href="html/nur.html">Nursery</a></li>
           <li><a href="html/kg.html">KG</a></li>
@@ -59,7 +67,7 @@
         </ul>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleSubmenu('teacherSubmenu')">Teacher Guidebook ▼</a>
+        <a href="javascript:void(0);" onclick="toggleSubmenu(event, 'teacherSubmenu')">Teacher Guidebook ▼</a>
         <ul id="teacherSubmenu" class="submenu">
           <li><a href="TeacherGuidebook/html/class1.html">Class 1</a></li>
           <li><a href="TeacherGuidebook/html/class2.html">Class 2</a></li>
@@ -74,45 +82,100 @@
         </ul>
       </li>
       <li><a href="html/specificgrid.html">Curriculum</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </div>
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
 </header>
 
-<!-- Content -->
-<div class="hero">
-  <h1>WELCOME TO EMBOCES</h1>
-</div>
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <span class="eyebrow">Educational / Institutional Portal</span>
+      <h1>Welcome to EMBOCES</h1>
+      <p>A professional digital platform for curriculum, grids, teacher guidebooks, updates, and academic resources.</p>
+      <div class="hero-actions">
+        <a href="#features" class="btn-gradient">Get Started</a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-panel reveal">
+      <div class="stat-card"><strong>10+</strong><span>Class Resources</span></div>
+      <div class="stat-card"><strong>24/7</strong><span>Easy Access</span></div>
+      <div class="stat-card"><strong>100%</strong><span>Student Focused</span></div>
+    </div>
+  </section>
 
-<div class="content">
-  <p>This is our app for EMBOCES.</p>
-</div>
+  <section class="section" id="about">
+    <div class="section-heading reveal">
+      <span class="eyebrow">About EMBOCES</span>
+      <h2>Clean access to academic resources</h2>
+      <p>EMBOCES provides organized educational materials and quick navigation for students, teachers, and school communities.</p>
+    </div>
+    <div class="info-grid">
+      <article class="glass-card reveal"><i class="fa-solid fa-bullseye"></i><h3>Mission</h3><p>Support learning through simple, reliable, and accessible digital resources.</p></article>
+      <article class="glass-card reveal"><i class="fa-solid fa-eye"></i><h3>Vision</h3><p>Build a modern educational portal that helps every learner find materials faster.</p></article>
+      <article class="glass-card reveal"><i class="fa-solid fa-graduation-cap"></i><h3>Learning</h3><p>Keep grids, curriculum files, guidebooks, and news in one clean platform.</p></article>
+    </div>
+  </section>
 
-<hr>
+  <section class="section" id="features">
+    <div class="section-heading reveal"><span class="eyebrow">Features</span><h2>Everything organized for education</h2></div>
+    <div class="feature-grid">
+      <a class="feature-card reveal" href="html/specificgrid.html"><i class="fa-solid fa-layer-group"></i><h3>Easy Navigation</h3><p>Find grids, classes, curriculum, and guidebooks quickly.</p></a>
+      <article class="feature-card reveal"><i class="fa-solid fa-bolt"></i><h3>Fast Updates</h3><p>Latest news and learning resources appear in a clean card layout.</p></article>
+      <article class="feature-card reveal"><i class="fa-solid fa-user-graduate"></i><h3>Student Support</h3><p>Download and view PDF materials easily from any device.</p></article>
+      <article class="feature-card reveal"><i class="fa-solid fa-shield-halved"></i><h3>Secure Platform</h3><p>Simple, focused pages with readable typography and accessible actions.</p></article>
+    </div>
+  </section>
 
-<section>
-  <h1 style="text-align:center;">Latest News</h1>
-  <div id="news-container"></div>
-  <div class="pagination">
-    <button id="prev-button" style="display:none;">Previous</button>
-    <button id="next-button" style="display:none;">Next</button>
-  </div>
-</section>
+  <section class="section testimonials" id="testimonials">
+    <div class="section-heading reveal"><span class="eyebrow">Testimonials</span><h2>Trusted by learners and teachers</h2></div>
+    <div class="testimonial-grid">
+      <article class="testimonial-card reveal"><p>“The resources are easy to find and the download pages are simple to use.”</p><strong>Student Feedback</strong></article>
+      <article class="testimonial-card reveal"><p>“Teacher guidebooks and class materials are organized in one helpful place.”</p><strong>Teacher Feedback</strong></article>
+      <article class="testimonial-card reveal"><p>“The portal makes curriculum access faster and more reliable for everyone.”</p><strong>Parent Feedback</strong></article>
+    </div>
+  </section>
 
+  <section class="section news-section">
+    <div class="section-heading reveal"><span class="eyebrow">Updates</span><h2>Latest News</h2></div>
+    <div id="news-container"></div>
+    <div class="pagination">
+      <button id="prev-button" style="display:none;">Previous</button>
+      <button id="next-button" style="display:none;">Next</button>
+    </div>
+  </section>
 
+  <section class="section contact-section" id="contact">
+    <div class="contact-card reveal">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Get in touch with EMBOCES</h2>
+        <p>Send a message for academic resources, updates, or support.</p>
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i> jananamuna@gmail.com</p>
+          <p><i class="fa-brands fa-facebook"></i> Facebook Community</p>
+        </div>
+      </div>
+      <form>
+        <input type="text" name="name" placeholder="Your name" aria-label="Your name">
+        <input type="email" name="email" placeholder="Your email" aria-label="Your email">
+        <textarea name="message" placeholder="Your message" aria-label="Your message"></textarea>
+        <button type="submit" class="btn-gradient">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer class="footer">
-  <p>&copy; 2025 Shree EMBOCES. All Rights Reserved.</p>
-  <p>
-    <a href="index.html">Home</a> |
-    <a href="#">Privacy Policy</a> |
-    <a href="#">Terms of Service</a>
-  </p>
-  <p>
-    <a href="https://www.facebook.com/share/1EFB78GBa4/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:jananamuna@gmail.com" style="margin-left: 10px;"><i class="fas fa-envelope"></i></a>
-  </p>
+  <div class="footer-grid">
+    <div><h3>EMBOCES</h3><p>Modern educational portal for curriculum, grids, guidebooks, and updates.</p></div>
+    <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="html/specificgrid.html">Curriculum</a><a href="#contact">Contact</a></div>
+    <div><h4>Connect</h4><a href="https://www.facebook.com/share/1EFB78GBa4/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a><a href="mailto:jananamuna@gmail.com"><i class="fas fa-envelope"></i> Email</a></div>
+  </div>
+  <p class="copyright">&copy; 2025 Shree EMBOCES. All Rights Reserved.</p>
 </footer>
-
 <!-- JavaScript -->
 <script>
   function detectSocialMediaApp() {
@@ -178,12 +241,47 @@
     document.getElementById("sidebar").classList.toggle("show");
   }
 
-  function toggleSubmenu(id) {
+  function toggleSubmenu(event, id) {
+    event.stopPropagation();
     const allSubmenus = document.querySelectorAll('.submenu');
     allSubmenus.forEach(submenu => {
       if (submenu.id !== id) submenu.classList.remove('show');
     });
-    document.getElementById(id).classList.toggle('show');
+    const submenu = document.getElementById(id);
+    if (submenu) {
+      submenu.classList.toggle('show');
+    }
+  }
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.submenu').forEach(submenu => submenu.classList.remove('show'));
+  });
+
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const icon = document.querySelector('.theme-toggle i');
+    if (icon) {
+      icon.className = document.body.classList.contains('dark-mode') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+  }
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+
+  const contactForm = document.querySelector('.contact-card form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Thank you for contacting EMBOCES.');
+      contactForm.reset();
+    });
   }
 
   let deferredPrompt;
@@ -224,3 +322,4 @@
 
 </body>
 </html>
+
