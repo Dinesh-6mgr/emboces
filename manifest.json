@@ -1,7 +1,8 @@
 {
-  "name": "Emobces",
-  "short_name": "Emobces",
-  "start_url": "./index.html",
+  "name": "EMBOCES",
+  "short_name": "EMBOCES",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",

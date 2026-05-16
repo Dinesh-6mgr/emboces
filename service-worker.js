@@ -1,12 +1,13 @@
-const CACHE_NAME = 'grid-2081-cache-v2';
+const CACHE_NAME = 'grid-2081-cache-v3';
 const urlsToCache = [
-    '/style.css',
-    '/image/logo.png',
-    '/image/Image.png',
-    '/image/school.png',
-    '/js/html.js',
-    '/articles.json',
-    '/offline.html', // Fallback page
+    './',
+    './index.html',
+    './style.css',
+    './manifest.json',
+    './image/logo.png',
+    './image/icon.png',
+    './articles.json',
+    './offline.html', // Fallback page
     // Add PDF paths if needed
 ];
 
@@ -59,7 +60,7 @@ self.addEventListener('fetch', event => {
         }).catch(() => {
             // Fallback for HTML pages when offline
             if (event.request.headers.get('accept')?.includes('text/html')) {
-                return caches.match('/offline.html');
+                return caches.match('./offline.html');
             }
         })
     );
